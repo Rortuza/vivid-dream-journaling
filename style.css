@@ -1,0 +1,18 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 0 1rem 2rem; background: #fafafa; color: #111; }
+header { display: grid; gap: .6rem; padding: 1rem 0; border-bottom: 1px solid #eee; }
+nav button { margin-right: .5rem; }
+.search { display: flex; gap: .5rem; }
+.search input { flex: 1; }
+.cards { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.card { border: 1px solid #eee; border-radius: 8px; padding: 1rem; background: #fff; }
+.muted { color: #666; font-size: .9rem; }
+.tags { font-size: .9rem; color: #333; }
+.form { display: grid; gap: .75rem; max-width: 720px; }
+.form textarea, .form input { width: 100%; padding: .5rem; }
+fieldset { border: 1px solid #eee; padding: .75rem; }
+.view.hidden { display: none; }
+dialog { width: min(760px, 96vw); border: 1px solid #ddd; border-radius: 8px; padding: 1rem 1.25rem; }
+dialog::backdrop { background: rgba(0,0,0,.3); }
+button { padding: .6rem 1rem; border: 1px solid #222; background: #222; color: white; border-radius: 6px; cursor: pointer; }
+button:hover { filter: brightness(1.1); }

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dream Journal AI, Static</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <meta name="theme-color" content="#111111">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dream Journal AI</h1>
+    <nav>
+      <button id="tab-home">Entries</button>
+      <button id="tab-new">New Entry</button>
+      <button id="export">Export CSV</button>
+    </nav>
+    <form id="search-form" class="search">
+      <input id="q" placeholder="search text">
+      <input id="tag" placeholder="tag filter">
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <section id="view-home" class="view">
+      <ul id="cards" class="cards"></ul>
+    </section>
+
+    <section id="view-new" class="view hidden">
+      <form id="new-form" class="form">
+        <label>Title <input id="title" required></label>
+        <label>Tags <input id="tags" placeholder="falling, exam, chase"></label>
+        <label>Dream text <textarea id="text" rows="10" required></textarea></label>
+        <fieldset>
+          <legend>Context</legend>
+          <label>Screen minutes last hour <input type="number" id="screen" min="0" value="0"></label>
+          <label>Caffeine mg today <input type="number" id="caffeine" min="0" value="0"></label>
+          <label>Minutes since last meal at sleep <input type="number" id="meal" min="0" value="0"></label>
+          <label>Workout minutes <input type="number" id="workout" min="0" value="0"></label>
+          <label>Stress 1 to 5 <input type="number" id="stress" min="1" max="5" value="3"></label>
+          <label><input type="checkbox" id="lucid"> Lucid</label>
+        </fieldset>
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+    <dialog id="detail">
+      <article>
+        <h3 id="d-title"></h3>
+        <p class="muted" id="d-dt"></p>
+        <p id="d-text"></p>
+        <p class="tags" id="d-tags"></p>
+        <hr>
+        <h4>Analysis</h4>
+        <ul>
+          <li>Sentiment: <span id="d-sent"></span></li>
+          <li>Primary emotion: <span id="d-emotion"></span></li>
+          <li>Nightmare index: <strong id="d-ni"></strong></li>
+        </ul>
+        <h4>Context</h4>
+        <ul>
+          <li>Screen last hour: <span id="d-screen"></span> min</li>
+          <li>Caffeine: <span id="d-caff"></span> mg</li>
+          <li>Minutes since last meal: <span id="d-meal"></span></li>
+          <li>Workout: <span id="d-work"></span> min</li>
+          <li>Stress: <span id="d-stress"></span> of 5</li>
+          <li>Lucid: <span id="d-lucid"></span></li>
+        </ul>
+        <h4>Coaching</h4>
+        <ul id="d-recs"></ul>
+        <menu>
+          <button id="close-detail">Close</button>
+        </menu>
+      </article>
+    </dialog>
+  </main>
+
+  <footer>
+    <p class="muted">Local only, data stored on this device in your browser</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
